@@ -1,0 +1,212 @@
+<div class="checkout-container">
+  <div class="product-container box">
+    <div class="video-list-container">
+      <div class="video-item">
+        <nb-card class="customer-video-view-card">
+          <nb-card-body class="responsive-card-body">
+            <div class="thumbnail">
+              <ng-container>
+                <div class="iframe-container" >
+                  <iframe
+                    src="https://iframe.mediadelivery.net/embed/257137/cfdbe93b-23d8-4001-935e-94690ca36bc4?autoplay=false&loop=false&muted=false&preload=false&responsive=true4"
+                    loading="lazy"
+                    style="
+                      border: 0;
+                      position: absolute;
+                      top: 0;
+                      height: 100%;
+                      width: 100%;
+                    "
+                    allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
+                    allowfullscreen="true"
+                  ></iframe>
+                </div>
+              </ng-container>
+              <!-- <div class="details">{{ purchasedVideoDetails.title }}</div> -->
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+
+    <div class="details">
+      <h1 class="cost">$100</h1>
+      <h3 class="title">Purpose of life</h3>
+    </div>
+  </div>
+  <div class="card-container" id="one">
+    <div class="card-details">
+      <nb-card class="checkout-card">
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item class="info-row">
+              <div class="shipping-form-container">
+                <label class="shipping-form-label" for="customerEmail"
+                  >Please provide your email address where you want the
+                  video</label
+                >
+                <input
+                  class="shipping-form-input"
+                  nbInput
+                  fullwidth
+                  type="email"
+                  id="customerEmail"
+                  placeholder="Enter your email"
+                  [(ngModel)]="customerEmail"
+                  (ngModelChange)="onEmailChange()"
+                  #emailInput="ngModel"
+                  required
+                  email
+                />
+                <div *ngIf="emailError" style="color: red">
+                  Please enter a valid email address.
+                </div>
+              </div>
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+        <nb-card-footer>
+          <p class="shipping-form-label">
+            By proceeding with this payment, you agree to the
+            <a href="#">terms and conditions.</a>
+          </p>
+
+          <div class="razorpay-button-container">
+            <button
+              [disabled]="razorpayButtonDisabled"
+              id="razorpay-button"
+              class="razorpay-button"
+              (click)="initiatePaymentWithRazorPay()"
+            >
+              Pay with Razorpay
+            </button>
+          </div>
+
+          <div id="paypal-buttons-container"></div>
+          <div class="shipping-form-label">
+            For assistance or inquiries regarding your payment, please contact
+            our customer support team at
+            <a class="email-link" href="mailto:support@antifragileco.com"
+              >support&#64;antifragileco.com</a
+            >
+            We're here to help you every step of the way!
+          </div>
+        </nb-card-footer>
+      </nb-card>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="left-side">
+  <nb-card class="checkout-card">
+    <nb-card-body>
+      <nb-list>
+        <nb-list-item class="info-row">
+          <div class="shipping-form-container">
+            <label class="shipping-form-label" for="customerEmail"
+              >Please provide your email address where you want the video</label
+            >
+            <input
+              class="shipping-form-input"
+              nbInput
+              fullwidth
+              type="email"
+              id="customerEmail"
+              placeholder="Enter your email"
+              [(ngModel)]="customerEmail"
+              (ngModelChange)="onEmailChange()"
+              #emailInput="ngModel"
+              required
+              email
+            />
+            <div *ngIf="emailError" style="color: red">
+              Please enter a valid email address.
+            </div>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <nb-card-footer>
+      <p class="shipping-form-label">
+        By proceeding with this payment, you agree to the
+        <a href="#">terms and conditions.</a>
+      </p>
+
+      <div class="razorpay-button-container">
+        <button
+          [disabled]="razorpayButtonDisabled"
+          id="razorpay-button"
+          class="razorpay-button"
+          (click)="initiatePaymentWithRazorPay()"
+        >
+          Pay with Razorpay
+        </button>
+      </div>
+
+      <div id="paypal-buttons-container"></div>
+      <div class="shipping-form-label">
+        For assistance or inquiries regarding your payment, please contact our
+        customer support team at
+        <a class="email-link" href="mailto:support@antifragileco.com"
+          >support&#64;antifragileco.com</a
+        >
+        We're here to help you every step of the way!
+      </div>
+    </nb-card-footer>
+  </nb-card>
+</div>
+<div class="right-side">
+  <p class="section-header">Order Summary</p>
+  <div class="video-list-container">
+    <div class="video-item">
+      <nb-card class="customer-video-view-card">
+        <nb-card-body class="responsive-card-body">
+          <div class="thumbnail">
+            <ng-container>
+              <div style="position: relative; padding-top: 56.25%">
+                <iframe
+                  src="https://iframe.mediadelivery.net/embed/257137/cfdbe93b-23d8-4001-935e-94690ca36bc4?autoplay=false&loop=false&muted=false&preload=false&responsive=true4"
+                  loading="lazy"
+                  style="
+                    border: 0;
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                  "
+                  allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
+                  allowfullscreen="true"
+                ></iframe>
+              </div>
+            </ng-container>
+            <div class="details">{{ purchasedVideoDetails.title }}</div>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+  <nb-card class="checkout-card">
+    <nb-card-body class="checkout-card-body">
+      <nb-list>
+        <nb-list-item class="info-row pricing-row">
+          <div><p>Subtotal</p></div>
+          <div>
+            <p>$570.00</p>
+          </div>
+        </nb-list-item>
+        <nb-list-item class="info-row pricing-row">
+          <div><p>Tax (8%)</p></div>
+          <div>
+            <p>$570.00</p>
+          </div>
+        </nb-list-item>
+        <nb-list-item class="info-row pricing-row">
+          <div><h5>Grand Total</h5></div>
+          <div>
+            <h5><strong>$570.00</strong></h5>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+  </nb-card>
+</div>  -->

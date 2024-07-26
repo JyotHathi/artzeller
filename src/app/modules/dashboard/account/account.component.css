@@ -1,0 +1,80 @@
+@import url("../dashboard.component.css");
+
+.account-card-container {
+  width: 70%;
+  margin: 0 auto; /* This centers the card in the middle of the page */
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.label {
+  text-align: left;
+  font-weight: bold; /* Optional, for styling */
+}
+
+.value {
+  text-align: right;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+  .info-row {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .value {
+    text-align: right;
+    margin-top: 5px; /* Adjust spacing between label and value on small screens */
+  }
+
+  .account-card-container {
+    width: 100%; /* Optional: adjust the width on smaller screens for better readability */
+  }
+}
+
+.copy-icon {
+  cursor: pointer;
+  margin-left: 10px; /* Adjust spacing between text and icon */
+}
+
+.email-verified {
+  display: inline-block;
+  padding: 2px 2px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  font-size: 10px;
+  margin-top: 5px;
+  width: fit-content;
+}
+
+.email-verified::before {
+ 
+  content: "\2713"; /* Unicode checkmark symbol */
+  margin-right: 4px; /* Adjust spacing between icon and text */
+}
+
+.email-not-verified {
+  display: inline-block;
+  padding: 2px 2px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: #f44336; /* Red background color */
+  color: #fff; /* White text color */
+  font-size: 10px;
+  width: fit-content;
+  margin-top: 5px;
+}
+
+.account-footer {
+  text-align: right;
+}
+
+.account-card {
+  box-shadow: none !important;
+  /* border: none !important; */
+}

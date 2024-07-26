@@ -1,0 +1,17 @@
+@import url("../../../../../styles.css");
+
+.header-logo {
+  height: auto;
+  max-height: 50px; /* Adjust this value as per your header size */
+  width: auto;
+  max-width: 100px; /* Adjust this value based on your logo's width */
+}
+
+.navbar-site-name {
+  text-align: center;
+}
+
+.navbar-brand {
+  margin-right: 0px !important;
+  padding: 10px;
+}

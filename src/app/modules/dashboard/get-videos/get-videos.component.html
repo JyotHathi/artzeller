@@ -1,0 +1,101 @@
+<div class="custom-header-container">
+  <h2 class="custom-page-header">{{ _title }}</h2>
+  <span
+    class="custom-badge"
+    nbTooltip="No. of Videos"
+    nbTooltipPlacement="bottom"
+    >{{ filteredVideos.length }}</span
+  >
+</div>
+
+<p class="custom-page-desc">{{ _pageDescription }}</p>
+
+<div class="filter-bar">
+  <div class="filter-item">
+    <nb-form-field>
+      <input
+        nbTooltip="Search videos by date"
+        nbTooltipPlacement="right"
+        nbInput
+        placeholder="Filter by Date"
+        [nbDatepicker]="formpicker"
+        [(ngModel)]="selectedDate"
+      />
+      <nb-icon nbPrefix icon="calendar-outline" pack="eva"></nb-icon>
+      <nb-rangepicker
+        #formpicker
+        [(range)]="_filterSelectedDate"
+        (rangeChange)="onDateRangeChange($event)"
+      >
+      </nb-rangepicker>
+    </nb-form-field>
+
+    <div
+      nbTooltip="Clear filter"
+      nbTooltipPlacement="right"
+      class="clear-filter"
+      *ngIf="
+        _filterSelectedDate &&
+        _filterSelectedDate.start &&
+        _filterSelectedDate.end
+      "
+      (click)="clearFilter()"
+      tooltip="Clear Filter"
+    >
+      <nb-icon icon="close-outline"></nb-icon>
+    </div>
+  </div>
+  <div class="filter-item">
+    <button
+      nbButton
+      class="custom-primary-button"
+      nbTooltip="Refresh Videos"
+      nbTooltipPlacement="right"
+    >
+      <nb-icon
+        icon="refresh-outline"
+        class="filter-icons"
+        (click)="refreshVideos()"
+      ></nb-icon>
+    </button>
+  </div>
+</div>
+
+<div class="video-list-container">
+  <div *ngIf="filteredVideos.length === 0" class="no-videos-message">
+    No videos found
+  </div>
+  <div *ngFor="let video of filteredVideos" class="video-item">
+    <nb-card>
+      <nb-card-body class="responsive-card-body">
+        <nb-badge
+          *ngIf="video.status == 'processing'"
+          class="custom-video-status-badge"
+          text="Processing"
+          status="warning"
+        ></nb-badge>
+        <div class="thumbnail">
+          <!-- Check if the video URL is available -->
+          <ng-container *ngIf="video.url">
+            <video controls [src]="video.url" class="video-preview"></video>
+          </ng-container>
+          <!-- If no video URL, display a placeholder image -->
+          <ng-container *ngIf="!video.url">
+            <img
+              src="assets/images/login-bg.png"
+              alt="Thumbnail"
+              class="placeholder-thumbnail"
+            />
+          </ng-container>
+        </div>
+      </nb-card-body>
+      <nb-card-footer class="responsive-card-footer">
+        <div class="details ">
+          <p class="creation-time">
+            {{ video.creationTime | date : "medium" }}
+          </p>
+        </div>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

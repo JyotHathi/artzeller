@@ -1,0 +1,55 @@
+<div class="custom-header-container">
+  <h2 class="custom-page-header">{{ _title }}</h2>
+</div>
+
+<p class="custom-page-desc">Manage site configuration</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-column-no-bg">
+    <div class="form-group col-50">
+      <label for="debug" class="form-label">Debug</label>
+      <input
+        nbInput
+        type="text"
+        id="debug"
+        formControlName="debug"
+        value="true"
+      />
+      <p
+        *ngIf="form?.get('debug')?.invalid && form?.get('debug')?.touched"
+        class="error-message"
+      >
+        Debug is required and must be less than 256 characters.
+      </p>
+    </div>
+    <div class="form-group col-50">
+      <label for="variation" class="form-label">Variation</label>
+      <input
+        nbInput
+        type="text"
+        id="variation"
+        formControlName="variation"
+        value="1"
+      />
+      <p
+        *ngIf="
+          form?.get('variation')?.invalid && form?.get('variation')?.touched
+        "
+        class="error-message"
+      >
+        Variation is required and must be less than 256 characters.
+      </p>
+    </div>
+  </div>
+  <div class="form-footer">
+    <button
+      class="custom-primary-button"
+      nbButton
+      (click)="onSubmit()"
+      type="button"
+      [disabled]="form.invalid"
+    >
+      Submit
+    </button>
+  </div>
+</form>

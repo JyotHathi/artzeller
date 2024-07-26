@@ -1,0 +1,51 @@
+/***********************************************************************/
+/* Header styles **/
+/***********************************************************************/
+.dark-header {
+  background-color: var(--custom-dark-color);
+}
+
+.dark-header nb-action {
+  color: whitesmoke;
+}
+
+.nav-action {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* .dashboard-header {
+  justify-content: flex-end;
+} */
+
+.nb-theme-default nb-user .user-picture {
+  border: 1px solid grey !important;
+}
+
+/***********************************************************************/
+/* Footer styles **/
+/***********************************************************************/
+
+.dark-footer {
+  background-color: var(--custom-dark-color);
+}
+
+/***********************************************************************/
+/* nb-layout styles **/
+/***********************************************************************/
+
+.small-container {
+  width: 70%;
+  margin: 0 auto; /* This centers the div */
+  display: block;
+}
+
+.card-row {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.card-col {
+  flex: 1 0 calc(50% - 1rem);
+  margin: 0 0.5rem;
+}

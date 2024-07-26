@@ -1,0 +1,29 @@
+@import url("../dashboard.component.css");
+
+.script-input {
+  width: 100%;
+  max-width: auto !important;
+  height: 250px;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.form-column-no-bg {
+  display: flex;
+}
+
+.form-group {
+  flex: 1;
+  padding: 0 10px;
+}
+
+input{
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.nb-theme-default nb-layout .layout {
+  min-width: none !important;
+}

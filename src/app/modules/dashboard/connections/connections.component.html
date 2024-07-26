@@ -1,0 +1,274 @@
+<div class="title-with-button">
+  <h2 class="custom-page-header">{{ _title }}</h2>
+  <button
+    nbButton
+    status="primary"
+    class="add-connection-btn"
+    (click)="openAddNewConnectionDialog()"
+  >
+    Add New Connection
+  </button>
+</div>
+<p class="custom-page-desc">{{ _pageDescription }}</p>
+
+<div class="card-row">
+  <div class="card-col" *ngFor="let connection of _connections; let i = index">
+    <nb-card>
+      <nb-card-header>
+        <div class="card-header-content">
+          <div class="icon-image-like">
+            <nb-icon icon="film-outline" pack="eva" status="primary"></nb-icon>
+          </div>
+        </div>
+      </nb-card-header>
+      <nb-card-footer class="card-footer">
+        <div class="footer-content">
+          <p class="footer-item">
+            <span class="footer-item-title">Type:</span> {{ connection.type }}
+          </p>
+          <p class="footer-item">
+            <span class="footer-item-title">ID:</span>
+            {{ connection.connectionID }}
+          </p>
+        </div>
+        <div class="footer-actions">
+          <button
+            nbButton
+            ghost
+            class="action-button"
+            (click)="openEditConnectionModal(connection)"
+          >
+            <nb-icon icon="edit-2-outline" pack="eva"></nb-icon>
+          </button>
+          <button
+            nbButton
+            ghost
+            class="action-button"
+            (click)="openDeleteDialog(connection)"
+          >
+            <nb-icon icon="trash-outline" pack="eva"></nb-icon>
+          </button>
+        </div>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>
+
+<!-- ********************************** -->
+<!-- ******  Add Connection Dialog *** -->
+<!-- ********************************** -->
+<ng-template #addConnectionDialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Add New Connection</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="_addConnectionForm">
+        <label for="inputField">Name</label>
+        <input
+          formControlName="name"
+          nbInput
+          fullWidth
+          placeholder="Connection Name"
+          class="form-element"
+        />
+        <div
+          *ngIf="
+            _addConnectionForm.get('name')?.touched &&
+            _addConnectionForm.get('name')?.invalid
+          "
+        >
+          Name is required.
+        </div>
+
+        <label for="inputField">Type</label>
+        <nb-select
+          formControlName="type"
+          id="type"
+          fullWidth
+          placeholder="Select Type"
+          class="form-element"
+        >
+          <nb-option *ngFor="let type of _connectionTypes" [value]="type">{{
+            type
+          }}</nb-option>
+        </nb-select>
+        <div
+          *ngIf="
+            _addConnectionForm.get('type')?.touched &&
+            _addConnectionForm.get('type')?.invalid
+          "
+        >
+          Connection type is required.
+        </div>
+      </form>
+    </nb-card-body>
+    <nb-card-footer>
+      <button
+        nbButton
+        status="primary"
+        (click)="addNewConnection()"
+        class="custom-primary-button"
+        [disabled]="_addConnectionForm.invalid"
+      >
+        Save
+      </button>
+      <button
+        nbButton
+        status="basic"
+        (click)="cancelAddNewConnection()"
+        class="custom-primary-button"
+      >
+        Cancel
+      </button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+<!-- ********************************** -->
+<!-- ******  Edit Connection Dialog *** -->
+<!-- ********************************** -->
+<ng-template #editConnectionDialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Edit Connection</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="_editConnectionForm">
+        <!-- ******** Connection Type  ******** -->
+        <label for="inputField" class="label-style">Type</label>
+        <input
+          formControlName="type"
+          nbInput
+          fullWidth
+          placeholder="Connection Type"
+          class="form-element"
+          value="FTP"
+          [disabled]="true"
+        />
+        <!-- ******** Connection ID  ******** -->
+        <label for="inputField" class="label-style">Id</label>
+        <input
+          formControlName="connectionID"
+          nbInput
+          fullWidth
+          placeholder="Connection ID"
+          class="form-element"
+          [disabled]="true"
+          value="FTP ID"
+        />
+        <!-- ******** Connection Host  ******** -->
+        <label for="inputField" class="label-style">Host</label>
+        <input
+          formControlName="host"
+          nbInput
+          fullWidth
+          placeholder="Connection Host"
+          class="form-element"
+          value="host.server.com"
+        />
+        <!-- ******** Connection Username  ******** -->
+        <label for="inputField" class="label-style">Username</label>
+        <input
+          formControlName="username"
+          nbInput
+          fullWidth
+          placeholder="Username"
+          class="form-element"
+          value="myusername"
+        />
+        <!-- ******** Connection Password  ******** -->
+        <label for="inputField" class="label-style">Password</label>
+        <nb-form-field>
+          <input
+            formControlName="password"
+            [type]="getInputType()"
+            fullWidth
+            nbInput
+            value="password@123"
+          />
+          <button
+            nbSuffix
+            nbButton
+            ghost
+            type="button"
+            (click)="toggleShowPassword()"
+          >
+            <nb-icon
+              [icon]="_showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+              pack="eva"
+              [attr.aria-label]="
+                _showPassword ? 'hide password' : 'show password'
+              "
+            >
+            </nb-icon>
+          </button>
+        </nb-form-field>
+        <!-- ******** Connection Port  ******** -->
+        <label for="inputField" class="label-style">Port</label>
+        <input
+          formControlName="port"
+          nbInput
+          fullWidth
+          placeholder="Port"
+          class="form-element"
+          value="myusername"
+        />
+        <!-- ******** Remote Path  ******** -->
+        <label for="inputField" class="label-style">Remote Path</label>
+        <input
+          formControlName="remotePath"
+          nbInput
+          fullWidth
+          placeholder="Remote Path"
+          class="form-element"
+        />
+        <!-- ******** File ******** -->
+        <label for="inputField" class="label-style">File</label>
+        <input nbInput fullWidth placeholder="File" class="form-element" />
+      </form>
+    </nb-card-body>
+    <nb-card-footer>
+      <button
+        nbButton
+        status="danger"
+        (click)="openDeleteDialog(null)"
+        class="custom-primary-button"
+      >
+        Delete Connection
+      </button>
+      <button
+        nbButton
+        status="primary"
+        (click)="updateConnectionDetails()"
+        class="save-button"
+      >
+        Save
+      </button>
+      <button
+        nbButton
+        status="basic"
+        class="save-button"
+        (click)="cancelEditConnection()"
+      >
+        Cancel
+      </button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+<!-- ********************************** -->
+<!-- ******  Delete Connection Dialog *** -->
+<!-- ********************************** -->
+<ng-template #deleteConfirmationDialog deleteDialogRef>
+  <nb-card>
+    <nb-card-header>Delete Connection</nb-card-header>
+    <nb-card-body>
+      Are you sure you want to delete this connection?
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton status="danger" (click)="deleteConnection()">
+        Delete
+      </button>
+      <button nbButton status="basic" (click)="cancelDeleteConfirmation()">
+        Cancel
+      </button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>

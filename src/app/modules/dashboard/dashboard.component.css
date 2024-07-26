@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("../../../theme.css");
+/* @import url('../../../styles.css'); */
+/***********************************************************************/
+/* header styles */
+/***********************************************************************/
+nb-layout-header nav {
+  align-items: center;
+  justify-content: flex-end !important;
+  display: flex;
+}
+
+.nb-theme-default nb-menu .menu-group,
+.nb-theme-default nb-menu .menu-item a {
+  font-family: "Roboto", sans-serif !important;
+}
+
+.nb-theme-default nb-menu .menu-item a.active {
+  color: rgba(67, 0, 153) !important;
+}
+
+/***********************************************************************/
+/* custom page title, description, loader */
+/***********************************************************************/
+.custom-page-header {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.custom-page-desc {
+}
+
+.nb-theme-default nb-spinner.status-basic {
+  background-color: none !important;
+}
+
+/* .loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+} */
+
+/***********************************************************************/
+/* nb-card styles **/
+/***********************************************************************/
+nb-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+nb-card-body {
+  padding: 20px;
+}
+
+/***********************************************************************/
+/* form styles **/
+/***********************************************************************/
+
+/* my-form.component.css */
+.form-element {
+  margin-bottom: 15px; /* Adjust the value based on your spacing preference */
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-primary-button {
+  margin-left: auto; /* Helps in right-aligning the button */
+  /* display: flex; */
+  margin: 10px;
+  background-color: #430099 !important;
+  color: #fff !important;
+}
+
+.edit-button {
+  margin-left: auto; /* Helps in right-aligning the button */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.label-style {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* .right-align-header {
+  align-items: center;
+  justify-content: flex-end !important;
+  display: flex;
+} */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  flex: 1; /* This will ensure the logo takes up space and pushes the nb-user to the right */
+}
+
+.header-logo {
+  height: auto;
+  max-height: 50px; /* Adjust this value as per your header size */
+  width: auto;
+  max-width: 100px; /* Adjust this value based on your logo's width */
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: 0px !important;
+  padding: 10px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: var(--bs-navbar-brand-hover-color);
+}
+
+.navbar-site-name {
+  text-align: center;
+}
+
+nb-user {
+  flex: 0 1 auto; /* This will allow the nb-user component to shrink if needed but not grow, keeping it aligned to the right */
+}
+
+.nb-theme-default nb-menu .menu-item a.active {
+  color: #430099 !important;
+}
+
+/******************************/
+
+.custom-top-navbar {
+  background-color: #430099;
+  background: linear-gradient(to right, #270067, #36007d, #7b30c8);
+  color: #fff;
+  height: 300px;
+  padding-top: 20px;
+  padding-right: 35px;
+}
+
+.custom-top-navbar .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.custom-top-navbar .logo-container {
+  margin-right: 20px;
+}
+
+.custom-top-navbar .nb-tabset {
+  margin-right: 20px;
+}
+
+.content {
+  padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: -50px;
+  min-height: 800px;
+}
+
+.no-padding {
+  padding: 0px 0px !important;
+}
+
+/* Custom tabset styles */
+.custom-tabset {
+  border: none; /* Remove default border */
+}
+
+/* Custom tab link styles */
+.custom-tabset ::ng-deep .nav-link {
+  border-bottom: none !important;
+  color: #fff !important;
+}
+
+/* Custom active tab link styles */
+.custom-tabset ::ng-deep .nav-link.active {
+  background-color: #b671ef !important;
+  border-color: #b671ef !important;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%; /* Adjust spacing between links and right edge */
+}
+
+.nav-links a {
+  margin-left: 20px; /* Adjust spacing between links */
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff; /* Adjust link color */
+}
+
+.nav-links a {
+  margin-left: 20px; /* Adjust spacing between links */
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff; /* Default link color */
+  padding-bottom: 5px;
+}
+
+.nav-links a.active {
+  color: #b671ef; /* Color for active link */
+  border-bottom: #b671ef 2px solid;
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+
+.form-column-no-bg {
+  background-color: #fff !important;
+  min-width: 0vh !important;
+}
+
+/****************************************/
+
+/* For desktop view */
+@media (min-width: 768px) {
+  /* Show the div */
+  .custom-top-navbar {
+    display: block;
+  }
+
+  /* Hide the nav */
+  .custom-navbar {
+    display: none;
+  }
+
+  .responsive-card-footer {
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* For mobile and tablet view */
+@media (max-width: 767px) {
+  /* Show the nav */
+  .custom-navbar {
+    display: block;
+  }
+
+  /* Hide the div */
+  .custom-top-navbar {
+    display: none;
+  }
+
+  .content {
+    margin-top: 115px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+#dashboardNav {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+#dashboardNav .navbar-brand {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #212529;
+}
+#dashboardNav .navbar-nav .nav-item .nav-link {
+  color: #6c757d;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem 0;
+  text-decoration: none;
+}
+#dashboardNav .navbar-nav .nav-item .nav-link:hover,
+#dashboardNav .navbar-nav .nav-item .nav-link:active {
+  color: #430099;
+}
+#dashboardNav .navbar-nav .nav-item .nav-link.active {
+  color: #430099 !important;
+}
+@media (min-width: 992px) {
+  #dashboardNav {
+    background: var(--bs-primary);
+    /* box-shadow: none; */
+    /* background-color: transparent; */
+  }
+  #dashboardNav .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #dashboardNav .navbar-brand:hover {
+    color: #fff;
+  }
+  #dashboardNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 1rem;
+  }
+  #dashboardNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+  }
+  #dashboardNav .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 0;
+  }
+  #dashboardNav.navbar-shrink {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  #dashboardNav.navbar-shrink .navbar-brand {
+    color: #212529;
+  }
+  #dashboardNav.navbar-shrink .navbar-brand:hover {
+    color: #430099;
+  }
+  #dashboardNav.navbar-shrink .navbar-nav .nav-item .nav-link {
+    color: #212529;
+  }
+  #dashboardNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
+    color: #430099;
+  }
+}
+
+.navbar-close-icon {
+  margin-left: 5px; /* Adjust spacing between the toggler icon and close button */
+  cursor: pointer;
+  display: none; /* Initially hide close button icon */
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+.navbar-close-icon nb-icon {
+  font-size: 2.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler[aria-expanded="true"] .navbar-close-icon {
+    display: inline-block; /* Display close button icon when navbar is expanded in mobile view */
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    display: none;
+  }
+
+  .navbar-toggler[aria-expanded="true"] {
+    border: none;
+  }
+}
+
+/* nb-card responsive design for 767px */
+@media (max-width: 767px) {
+  /* reduce the width on mobile view */
+  .responsive-card-body {
+    padding: 5px;
+  }
+
+  .responsive-card-footer {
+    padding: 0rem 0.5rem;
+  }
+
+  .responsive-navbar-brand-header {
+    font-size: 12px;
+  }
+}
+
+.page-nav-info,
+.page-nav-info-desc,
+.page-nav-info-header {
+  color: #ededed;
+  text-align: center;
+}
+
+.page-nav-info-desc {
+  padding-left: 130px;
+  padding-right: 130px;
+  opacity: 0.5;
+}
+.page-nav-info {
+  padding-top: 50px;
+  opacity: 0.9;
+}

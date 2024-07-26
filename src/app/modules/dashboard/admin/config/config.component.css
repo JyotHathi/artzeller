@@ -1,0 +1,39 @@
+@import url('../../dashboard.component.css');
+
+input{
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.custom-no-shadow-footer{
+    box-shadow: none !important;
+    text-align: right !important;
+    display: block !important;
+}
+
+.layout-container .content nb-layout-footer nav {
+    justify-content: center;
+    display: block !important;
+}
+
+.nb-theme-default nb-layout .layout{
+    min-width: none !important;
+}
+
+.col-50{
+    width: 50%;
+}
+
+.form-column-no-bg {
+    display: flex;
+  }
+  
+  .form-group {
+    flex: 1;
+    padding: 0 10px;
+  }
+  
+ 
+  
+  
+  

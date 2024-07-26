@@ -1,0 +1,46 @@
+.btn-primary {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  
+  .btn-light {
+    color: #430099 !important;
+    text-decoration: none !important;
+  }
+  
+  .light-text {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  
+  /* For mobile and tablet view */
+  @media (max-width: 767px) {
+    /* center align subsribe newsletter section */
+    .subscribe-area {
+      text-align: center;
+    }
+  
+    .subscribe-form form input {
+      margin: 10px;
+    }
+  
+     /* increase pending of solution-card */
+    .solution_card {
+      padding-bottom: 55px;
+    }
+  }
+  
+  
+  .btn-contact-us{
+    margin-top: 30px;
+  }
+  
+  .email-link{
+    color: #b881ff !important;
+  }
+
+
+  header.masthead{
+    height: auto !important;
+    min-height: 400px !important;
+  }

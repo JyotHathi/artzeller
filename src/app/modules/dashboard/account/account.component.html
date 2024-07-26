@@ -1,0 +1,54 @@
+<!-- <div class="title-with-button">
+  <h2 class="custom-page-header">{{ _title }}</h2>
+</div>
+<p class="custom-page-desc">{{ _pageDescription }}</p> -->
+
+<div class="account-card-container">
+  <nb-card class="account-card">
+    <nb-card-header>Account Information</nb-card-header>
+    <nb-card-body>
+      <nb-list>
+        <!-- <nb-list-item class="info-row">
+          <div class="label">Username</div>
+          <div class="value">{{ _accountInfo?.username }}</div>
+        </nb-list-item> -->
+        <nb-list-item class="info-row">
+          <div class="label">Email</div>
+          <div class="value">
+            {{ _accountInfo?.email }}
+            <div>
+              <span class="email-verified" *ngIf="_accountInfo?.email_verified"
+                >Email Verified</span
+              >
+              <span
+                class="email-not-verified"
+                *ngIf="!_accountInfo?.email_verified"
+                >Email Not Verified</span
+              >
+            </div>
+          </div>
+        </nb-list-item>
+        <!-- <nb-list-item class="info-row">
+          <div class="label">Subscription</div>
+          <div class="value">Platinum Plan</div>
+        </nb-list-item> -->
+        <nb-list-item class="info-row">
+          <div class="label">API Key</div>
+          <div class="value">A8723BGA-23ASJI-ASJA-ASJASJASAIS</div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <nb-card-footer>
+      <p>
+        If you want to change any of these settings, please contact us at
+        support&#64;Mithya.ai
+      </p>
+      <p>If you want to close your session please click on Logout</p>
+      <div class="account-footer">
+        <button nbButton  class="custom-primary-button"  (click)="confirmLogout()" >
+          Logout
+        </button>
+      </div>
+    </nb-card-footer>
+  </nb-card>
+</div>

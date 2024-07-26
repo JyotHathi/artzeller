@@ -1,0 +1,234 @@
+@import url("../dashboard.component.css");
+
+.video-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.video-item {
+  width: calc(32% - 20px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  margin: 15px;
+}
+
+.thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+/* .download-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+} */
+
+.details {
+  /* margin-top: 10px; */
+}
+
+/* .custom-page-header {
+  display: flex;
+  align-items: center; 
+}
+
+.custom-badge {
+  margin-left: 10px; 
+  top: auto !important;
+  right: auto !important;
+} */
+
+.custom-header-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.custom-page-header {
+  margin-right: 10px; /* Add some spacing between the title and the badge */
+}
+
+.custom-badge {
+  padding: 3px 8px; /* Adjust padding for badge */
+  background-color: #430099; /* Adjust badge background color */
+  color: #fff; /* Adjust badge text color */
+  border-radius: 10px; /* Adjust badge border radius */
+  margin-top: -15px;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #fbf2ff; */
+  padding: 10px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  margin-bottom: 15px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+}
+
+.filter-item label {
+  margin-right: 10px;
+}
+
+.filter-item input {
+  width: 320px;
+  /* margin-right: 20px; */
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filter-item input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.nb-calendar-kit {
+  z-index: 1100 !important;
+}
+
+.custom-video-status-badge {
+  top: auto !important;
+  right: auto !important;
+  display: block !important;
+  z-index: 100;
+  font-size: 12px;
+  border-radius: 1px;
+}
+
+.video-item {
+  position: relative; /* Ensure the card is positioned relatively */
+}
+
+.download-icon {
+  position: absolute;
+  right: 10px;
+  color: #666;
+  cursor: pointer;
+}
+
+.details {
+  /* Additional styles for video details */
+  margin-top: 10px;
+}
+
+.details p {
+  /* Styles for each paragraph in details */
+  font-size: 14px;
+  color: #666;
+}
+
+.details p b {
+  /* Styles for the 'Creation Time' label */
+  font-weight: bold;
+  color: #666;
+}
+
+.clear-filter {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.clear-filter nb-icon {
+  color: #666;
+  margin-left: -30px;
+}
+
+
+
+
+.video-preview {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.placeholder-thumbnail {
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.thumbnail {
+  height: 200px; /* Set the desired height for thumbnails */
+  overflow: hidden; /* Hide overflow content if needed */
+}
+
+.video-preview,
+.placeholder-thumbnail {
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+.filter-icons{
+  cursor: pointer;
+}
+
+
+/**********************************************/
+
+
+.video-item {
+  width: calc(100% - 30px); /* Adjust the margin based on your preference */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  margin: 15px;
+}
+
+@media (min-width: 768px) {
+  .video-item {
+    width: calc(49% - 30px); /* Adjust the width for desktop view */
+  }
+}
+
+@media (min-width: 992px) {
+  .video-item {
+    width: calc(32% - 30px); /* Adjust the width for tablet view */
+  }
+}
+
+
+/* Filter bar design */
+@media (max-width: 767px) {
+  /* reduce the width on mobile view */
+  .filter-item input {
+    width: 250px;
+  }
+
+  .cdk-overlay-pane{
+    left: 0;
+  }
+}
+
+/* nb-card responsive design for 640px */
+@media (max-width: 640px) {
+  /* reduce the width on mobile view */
+  .filter-item input {
+    width: 180px;
+  }
+
+  .cdk-overlay-pane{
+    left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .nb-range-field {
+    width: 100%; /* Set the width to 100% on smaller screens */
+  }
+}

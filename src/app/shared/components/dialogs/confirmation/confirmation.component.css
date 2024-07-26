@@ -1,0 +1,14 @@
+.confirmation-footer {
+  text-align: right;
+}
+.confirmation-footer button {
+  margin-left: 5px;
+}
+
+.custom-primary-button {
+  margin-left: auto; /* Helps in right-aligning the button */
+  /* display: flex; */
+  margin: 10px;
+  background-color: #430099 !important;
+  color: #fff !important;
+}

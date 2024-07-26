@@ -1,0 +1,126 @@
+<!--- SEARCH BY MOOD START -->
+<!-- <div class="autocomplete-container">
+  <nb-form-field>
+    <nb-icon
+      class="search-video-icon"
+      nbPrefix
+      icon="search"
+      pack="eva"
+    ></nb-icon>
+    <input
+      class="video-search-bar"
+      nbInput
+      fullWidth
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterItems()"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      placeholder="Search videos by a mood..."
+    />
+  </nb-form-field>
+
+  <ul *ngIf="showDropdown" class="autocomplete-dropdown">
+    <li *ngFor="let item of filteredItems" (mousedown)="selectItem(item)">
+      {{ item }}
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div class="chip-container" *ngIf="selectedChips && selectedChips.length > 0">
+  <nb-tag
+    *ngFor="let chip of selectedChips"
+    [text]="chip"
+    [removable]="true"
+    (remove)="removeChip(chip)"
+  ></nb-tag>
+</div> -->
+
+<!--- SEARCH BY MOOD END -->
+
+<div class="video-list-container">
+  <div class="video-container">
+    <div class="video-inner-container" *ngFor="let video of videos">
+      <div class=" video-item">
+        <nb-card class="customer-video-view-card">
+          <nb-card-body class="responsive-card-body">
+            <div class="thumbnail">
+              <ng-container>
+                <div class="iframe-container">
+                  <iframe
+                    src="https://iframe.mediadelivery.net/embed/257137/8eb4a866-54fa-4ca2-80db-268be61fb844?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                    loading="lazy"
+                    style="border: 0;"
+                    allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
+                    allowfullscreen="true"
+                  ></iframe>
+                </div>
+              </ng-container>
+              <div class="details">Purpose of Life</div>
+            </div>
+            <div class="icon-buttons">
+              <div class="price-container-responsive" *ngIf="isMobile">
+                <p class="price-text-responsive">$5.05</p>
+              </div>  
+              <div class="icon-circle purchase-video" (click)="purchaseVideo()">
+                <nb-icon
+                  icon="shopping-cart-outline"
+                  class="cart-icon"
+                  nbTooltip="Buy Now"
+                  nbTooltipPlacement="right"
+                ></nb-icon>
+              </div>
+            </div>
+          </nb-card-body>
+        </nb-card>
+        
+      </div>
+      <div class="price-container" *ngIf="!isMobile">
+        <p class="price-text">$5.05</p>
+      </div>    
+    </div>
+  </div>
+  
+  
+</div>
+
+<!--- @@ VIDEO STREAMING EXAMPLE 1-->
+
+<!-- <div class="wrapper" id="video-wrapper">
+  <div class="container_2">
+    <iframe
+      src="https://iframe.mediadelivery.net/play/257137/cfdbe93b-23d8-4001-935e-94690ca36bc4"
+      loading="lazy"
+      style="border: none"
+      allowfullscreen="true"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    ></iframe>
+  </div>
+</div> -->
+
+<!--- @@ VIDEO STREAMING EXAMPLE 2-->
+
+<!-- <div class="video-container">
+  <video
+    id="bunny-video"
+    class="video-js vjs-default-skin"
+    controls
+    preload="auto"
+    width="640"
+    height="360"
+    poster="https://example.com/path/to/poster.jpg"
+    data-setup="{}"
+  >
+    <source
+      src="https://iframe.mediadelivery.net/play/257137/cfdbe93b-23d8-4001-935e-94690ca36bc4"
+      type="video/mp4"
+    />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+</div> -->

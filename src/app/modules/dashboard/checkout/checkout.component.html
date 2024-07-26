@@ -1,0 +1,51 @@
+<div class="checkout-card-container">
+  <nb-card class="checkout-card">
+    <nb-card-header>Product Information</nb-card-header>
+    <nb-card-body>
+      <nb-list>
+        <nb-list-item class="info-row">
+          <div class="video-container">
+            <video
+              #videoPlayer
+              width="600"
+              height="400"
+              controls
+              controlsList="nodownload"
+              class="video-preview"
+            >
+              <source
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="media-heading">Product name</p>
+        </nb-list-item>
+        <nb-list-item class="info-row">
+          <div><p>Subtotal</p></div>
+          <div>
+            <p>$570.00</p>
+          </div>
+        </nb-list-item>
+        <nb-list-item class="info-row">
+          <div><p>Tax (8%)</p></div>
+          <div>
+            <p>$570.00</p>
+          </div>
+        </nb-list-item>
+        <nb-list-item class="info-row">
+          <div><h5>Grand Total</h5></div>
+          <div>
+            <h5><strong>$570.00</strong></h5>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card-body>
+    <nb-card-footer>
+      <p>Process your payment with</p>
+      <div id="paypal-buttons-container"></div>
+      <div class="account-footer">For assistance or inquiries regarding your payment, please contact our customer support team at <a class="email-link" href="mailto:support@antifragileco.com">support&#64;antifragileco.com</a>  We're here to help you every step of the way!</div>
+    </nb-card-footer>
+  </nb-card>
+</div>

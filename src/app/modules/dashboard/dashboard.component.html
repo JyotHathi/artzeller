@@ -1,0 +1,123 @@
+<nb-layout>
+  <nb-layout-column class="no-padding">
+    <div class="custom-top-navbar">
+      <div class="header-content">
+        <div class="logo-container">
+          <img
+            src="../../../assets/images/purple-logo.png"
+            alt="Logo"
+            class="header-logo"
+            routerLink="/"
+          />
+          <span class="navbar-site-name"
+            ><a class="navbar-brand" href="/home">Mithya - Dashboard</a></span
+          >
+        </div>
+        <div class="nav-links">
+          <a
+            routerLink="/dashboard/videos/create"
+            routerLinkActive="active"
+            *ngIf="_isAdminRole"
+          >
+            Create a Video
+          </a>
+          <a routerLink="/dashboard/videos/get" routerLinkActive="active">
+            Arts
+          </a>
+          <!-- <a routerLink="/dashboard/plan-qoute" routerLinkActive="active">
+            Plan &amp; Quotes
+          </a> -->
+          <a routerLink="/dashboard/account" routerLinkActive="active">
+            Account
+          </a>
+        </div>
+      </div>
+      <div class="page-nav-info">
+        <h1 class="page-nav-info-header">{{ pageTitle }}</h1>
+        <p class="page-nav-info-desc">{{ pageDescription }}</p>
+      </div>
+    </div>
+
+    <!-- Responsive Navigation-->
+    <nav
+      class="navbar custom-navbar navbar-expand-lg navbar-light fixed-top py-3"
+      id="dashboardNav"
+    >
+      <div class="container px-4 px-lg-5">
+        <img
+          src="../../../assets/images/purple-logo.png"
+          alt="Logo"
+          class="header-logo"
+          routerLink="/"
+        />
+        <span class="navbar-site-name">
+          <a class="navbar-brand responsive-navbar-brand-header" href="/home"
+            >Mithya - Dashboard</a
+          ></span
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-close-icon"
+            ><nb-icon icon="close-circle-outline"></nb-icon
+          ></span>
+          <!-- Close button icon -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto my-2 my-lg-0">
+            <li class="nav-item">
+              <a
+                *ngIf="_isAdminRole"
+                class="nav-link"
+                routerLink="/dashboard/videos/create"
+                routerLinkActive="active"
+                >Create a Video</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/dashboard/videos/get"
+                routerLinkActive="active"
+                >Arts</a
+              >
+            </li>
+            <!-- <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/dashboard/plan-qoute"
+                routerLinkActive="active"
+              >
+                Plan &amp; Quotes</a
+              >
+            </li> -->
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/dashboard/account"
+                routerLinkActive="active"
+                >Account</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nb-card class="content" role="main">
+      <nb-card-body class="responsive-card-body">
+        <router-outlet></router-outlet>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <p>Copyright &copy; 2024 - Mithya</p>
+  </nb-layout-footer>
+</nb-layout>

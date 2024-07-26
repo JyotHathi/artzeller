@@ -1,0 +1,39 @@
+<div class="login-container">
+  <div class="form-section">
+    <!-- Your form goes here -->
+  </div>
+</div>
+
+<nb-layout>
+  <nb-layout-column>
+    <div class="container">
+      <div class="left d-flex flex-column justify-content-center"></div>
+      <div class="right">
+        <div class="logo-container">
+          <img
+            src="../../../assets/images/purple-logo.png"
+            alt="Logo"
+            class="header-logo"
+            routerLink="/"
+          />
+        </div>
+        <h3 class="responsive-custom-h3">Welcome to Mithya</h3>
+        <div class="form-section">
+          <form [formGroup]="loginForm" (ngSubmit)="loginWithSSO()">
+            <button nbButton status="primary" class="btn-login" type="submit">
+              Login or Sign Up
+            </button>
+          </form>
+          <p class="informative-text">
+            By signing up you accept the API <a href="#">Terms of use </a> and
+            accept to receive transactional and product emails from JSON2Video,
+            like your API Key and important communications regarding the use of
+            the API. We will never share your email address with anyone else.
+            Promised!
+          </p>
+          <p class="lbl-copyright">Copyright © Mithya 2024.</p>
+        </div>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

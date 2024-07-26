@@ -1,0 +1,38 @@
+<nb-layout>
+  <nb-layout-column class="no-padding">
+    <div class="custom-top-navbar fixed-top">
+      <div class="page-nav-info example-box">
+        <div class="logo-container">
+          <img
+            src="../../../assets/images/Artzller-Logo.png"
+            alt="Logo"
+            class="header-logo"
+            routerLink="/"
+          />
+          <span class="navbar-site-name" 
+            ><a class="navbar-brand " href="/home">Artzeller</a></span
+          >
+        </div>
+        <div class="page-title-center">
+          <div>
+            <h1 class="page-nav-info-header playwrite-au-vic-main header-text">
+              {{ pageTitle }}
+            </h1>
+            <p class="page-nav-info-desc" *ngIf="!isMobile">
+              {{ pageDescription }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nb-card class="content" role="main">
+      <nb-card-body class="responsive-card-body">
+        <router-outlet></router-outlet>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <p>Copyright &copy; 2024 - Mithya</p>
+  </nb-layout-footer>
+</nb-layout>

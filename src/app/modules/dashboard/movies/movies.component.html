@@ -1,0 +1,70 @@
+<h2 class="custom-page-header">{{ _title }}</h2>
+<p class="custom-page-desc">Check and review the movies you created</p>
+
+<nb-card
+  size="large"
+  [nbSpinner]="loading"
+  nbSpinnerStatus="primary"
+  nbSpinnerSize="large"
+  nbSpinnerMessage=""
+>
+  <nb-card-body>
+    <div class="filters-container">
+      <div class="filter">
+        <label>From - To</label>
+        <input
+          nbInput
+          placeholder="Pick Date Range"
+          [nbDatepicker]="formpicker"
+        />
+        <nb-rangepicker #formpicker></nb-rangepicker>
+      </div>
+
+      <div class="filter">
+        <label>Status</label>
+        <nb-select
+          id="status"
+          placeholder="Select Status"
+          [(selected)]="_selectedStatus"
+        >
+          <nb-option *ngFor="let status of _movieStatues" [value]="status">{{
+            status
+          }}</nb-option>
+        </nb-select>
+      </div>
+
+      <div class="filter">
+        <label>Type</label>
+        <nb-select
+          id="type"
+          placeholder="Select Type"
+          [(selected)]="_selectedType"
+        >
+          <nb-option *ngFor="let type of _movieTypes" [value]="type">{{
+            type
+          }}</nb-option>
+        </nb-select>
+        <i class="fa fa-times" (click)="resetIndividualFilter('status')"></i>
+      </div>
+      <!-- Add more filters as needed here -->
+      <div class="filter">
+        <button nbButton status="primary" (click)="applyFilters()">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <ngx-datatable
+        class="material"
+        [rows]="_selectedRows"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        rowHeight="auto"
+      >
+      </ngx-datatable>
+    </div>
+  </nb-card-body>
+</nb-card>

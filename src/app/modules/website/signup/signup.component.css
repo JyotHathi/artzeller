@@ -1,0 +1,16 @@
+.subpage-head{
+    /* height: 30vh !important; */
+    /* min-height: 40rem; */
+    padding-top: 4.5rem;
+    padding-bottom: 0;
+}
+
+header.subpage-head {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgb(68 43 90 / 73%) 100%), url("../../../../assets/img/bg-masthead.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
